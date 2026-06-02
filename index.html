@@ -287,7 +287,7 @@
   </div>
 
   <!-- ================= RESULTS CARD ================= -->
-  <div class="card" id="results">
+  <div class="card" id="results" style="display:none;">
 
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:1rem;flex-wrap:wrap;">
       <div style="font-size:18px;font-weight:500;">Your estimate</div>
@@ -592,7 +592,9 @@ document.getElementById("toggle-advanced").addEventListener("click", () => {
 });
 
 document.getElementById("estimate-btn").addEventListener("click", () => {
+  document.getElementById("results").style.display = "";
   render();
+  postHeight();
   document.getElementById("results").scrollIntoView({behavior:"smooth", block:"start"});
 });
 
